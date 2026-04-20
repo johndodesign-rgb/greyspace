@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4A5568">
+    <title>Greyspace Companion</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <h1>Greyspace</h1>
+                <p class="tagline">Quick capture for wandering minds</p>
+            </div>
+            <button id="test-data-btn" class="btn-ghost">Load Test Data</button>
+        </header>
+
+        <main>
+            <section class="capture-section">
+                <div class="capture-grid">
+                    <div class="capture-primary">
+                        <label for="scratchpad" class="capture-label">Brain dump</label>
+                        <textarea 
+                            id="scratchpad" 
+                            placeholder="What's on your mind right now?"
+                            autofocus
+                        ></textarea>
+                        <div class="capture-actions">
+                            <button id="save-btn" class="btn-primary">Capture</button>
+                            <button id="clear-btn" class="btn-secondary">Clear</button>
+                        </div>
+                    </div>
+
+                    <div class="capture-media">
+                        <div class="media-option">
+                            <div class="media-icon">🎤</div>
+                            <button id="voice-btn" class="btn-media">
+                                <span class="btn-text">Voice</span>
+                            </button>
+                            <div id="recording-status" class="status-text"></div>
+                        </div>
+                        
+                        <div class="media-option">
+                            <div class="media-icon">📷</div>
+                            <input type="file" id="photo-input" accept="image/*" capture="environment" style="display: none;">
+                            <button id="photo-btn" class="btn-media">
+                                <span class="btn-text">Photo</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="timeline-section">
+                <div class="timeline-header">
+                    <h2>Timeline</h2>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="Search captures..."
+                    >
+                </div>
+                <div id="captures-list" class="timeline-content">
+                    <!-- Captures will be inserted here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
