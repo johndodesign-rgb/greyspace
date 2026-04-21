@@ -1,10 +1,11 @@
 const CACHE_NAME = 'greyspace-v1';
+const BASE_PATH = '/greyspace';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/app.js',
-  '/manifest.json'
+  `${BASE_PATH}/`,
+  `${BASE_PATH}/index.html`,
+  `${BASE_PATH}/styles.css`,
+  `${BASE_PATH}/app.js`,
+  `${BASE_PATH}/manifest.json`
 ];
 
 // Install event - cache resources

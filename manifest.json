@@ -2,7 +2,7 @@
   "name": "Greyspace Companion",
   "short_name": "Greyspace",
   "description": "Quick capture companion for your Greyspace journal - clarity over completion, compassion over compliance",
-  "start_url": "/",
+  "start_url": "/greyspace/",
   "display": "standalone",
   "background_color": "#FAFAFA",
   "theme_color": "#4A5568",
