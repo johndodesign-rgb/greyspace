@@ -1,4 +1,4 @@
-const CACHE_NAME = 'greyspace-v1';
+const CACHE_NAME = 'greyspace-v2';
 const BASE_PATH = '/greyspace';
 const urlsToCache = [
   `${BASE_PATH}/`,
