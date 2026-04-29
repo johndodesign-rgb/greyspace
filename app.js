@@ -1,5 +1,5 @@
 // NeuroSync Scratchpad App
-class NeuroSyncApp {
+class GreyspaceApp {
     constructor() {
         this.scratchpad = document.getElementById('scratchpad');
         this.saveBtn = document.getElementById('save-btn');
@@ -89,12 +89,6 @@ class NeuroSyncApp {
         // Search input
         if (this.searchInput) {
             this.searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
-        }
-        
-        // Test data button
-        const testDataBtn = document.getElementById('test-data-btn');
-        if (testDataBtn) {
-            testDataBtn.addEventListener('click', () => this.populateTestData());
         }
         
         // Save on Enter + Cmd/Ctrl
@@ -659,66 +653,16 @@ class NeuroSyncApp {
     }
 
     // Test function to populate sample captures
-    populateTestData() {
-        const now = new Date();
-        const testCaptures = [
-            // Today
-            { text: "Remember to follow up with the ceramics supplier about the Delft blue glaze samples", hoursAgo: 2 },
-            { text: "Idea for Eddie book: what if he meets other yetis who DON'T love spaghetti? Conflict!", hoursAgo: 4 },
-            { text: "Check on DAFT visa documentation deadlines before March trip", hoursAgo: 6 },
-            
-            // Yesterday
-            { text: "Tūma chapter 7 - the crew discovers the temple isn't abandoned after all", daysAgo: 1, hoursAgo: 20 },
-            { text: "Dutch lesson: 'gezellig' has no English equivalent. Important cultural concept.", daysAgo: 1, hoursAgo: 15 },
-            { text: "Homeschool: research IB PYP unit on systems - water cycle, ecosystems", daysAgo: 1, hoursAgo: 10 },
-            
-            // 3 days ago
-            { text: "VW T3 Doka spotted in Arnhem listing - manual, clean interior, €15k", daysAgo: 3, hoursAgo: 14 },
-            { text: "Quarterly taxes due end of month - set reminder", daysAgo: 3, hoursAgo: 8 },
-            
-            // Last week
-            { text: "Klei Bloem branding: tulip red (#DC143C) + Delft blue (#1E3A8A)", daysAgo: 7, hoursAgo: 12 },
-            { text: "Contact makelaar about Zwolle neighborhood tours", daysAgo: 8, hoursAgo: 16 },
-            { text: "Client feedback: they loved the simplified navigation on the intranet redesign", daysAgo: 9, hoursAgo: 10 },
-            
-            // Two weeks ago
-            { text: "NeuroSync journal idea: weekly 'wins' page that doesn't require daily completion", daysAgo: 14, hoursAgo: 8 },
-            { text: "Colts season officially over. Draft needs: OL, edge rusher, and a real WR1", daysAgo: 15, hoursAgo: 18 },
-            
-            // Last month
-            { text: "Started Duolingo Dutch streak - day 45 today!", daysAgo: 45, hoursAgo: 12 },
-            { text: "Found that vinyl record shop in Lafayette that has rare soul albums", daysAgo: 50, hoursAgo: 14 },
-        ];
-
-        const captures = testCaptures.map((item, index) => {
-            const date = new Date(now);
-            if (item.daysAgo) {
-                date.setDate(date.getDate() - item.daysAgo);
-            }
-            date.setHours(date.getHours() - item.hoursAgo);
-            
-            return {
-                id: Date.now() - (index * 1000), // Ensure unique IDs
-                text: item.text,
-                timestamp: date.toISOString(),
-                date: date.toLocaleDateString()
-            };
-        });
-
-        localStorage.setItem('neurosync_captures', JSON.stringify(captures));
-        this.renderCaptures();
-        console.log('Test data populated!');
-    }
 }
 
 // Initialize app when DOM is ready
 let app;
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        app = new NeuroSyncApp();
+        app = new GreyspaceApp();
     });
 } else {
-    app = new NeuroSyncApp();
+    app = new GreyspaceApp();
 }
 
 // Service Worker registration for PWA
